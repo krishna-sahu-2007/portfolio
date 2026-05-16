@@ -973,3 +973,12 @@ a, button, .project-card, .project-thumb, .video-preview, .service-card, .skills
     transform: scale(0.98);
   }
 }
+
+body.touch-device {
+  cursor: auto;
+}
+
+body.touch-device .cursor,
+body.touch-device .cursor-ring {
+  display: none !important;
+}
