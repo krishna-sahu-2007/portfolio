@@ -945,3 +945,24 @@ a, button, .project-card, .project-thumb, .video-preview, .service-card, .skills
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+
+  .project-card,
+  .service-card,
+  .btn,
+  .skills span {
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .project-card:active,
+  .service-card:active,
+  .btn:active,
+  .skills span:active {
+    transform: scale(0.98);
+  }
+}
