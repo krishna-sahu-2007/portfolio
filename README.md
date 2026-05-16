@@ -8,8 +8,6 @@ The website focuses on a clean dark aesthetic with smooth interactions, subtle a
 
 ## Live Preview
 
-Add your deployed website link here:
-
 ```txt
 https://krishna-sahu-2007.github.io/portfolio/
 ```
