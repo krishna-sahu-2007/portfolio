@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Master Production UI Framework & Interactive Cursor Design Engine
-   ========================================================================== */
-
 :root {
   --dark: #091413;
   --deep: #285A48;
@@ -250,7 +246,7 @@ img {
   font-size: 14px;
 }
 
-/* CRITICAL BUGFIX: Heading layout isolated as inline-block to allow natural line breaks */
+/* CRITICAL BUGFIX*/
 .hero-content h1 {
   display: inline-block;
   max-width: 100%;
@@ -464,7 +460,7 @@ h1 {
   font-size: 23px;
 }
 
-/* CRITICAL BUGFIX: Safeguarded text components across cards so lines wrap natively */
+/* CRITICAL BUGFIX*/
 .project-info p,
 .service-card p,
 .about-content p,
@@ -743,7 +739,7 @@ iframe {
   top: 0;
   width: 15px;
   height: 15px;
-  background-color: #ffffff; /* Calibrated white for perfect color inversion math */
+  background-color: rgba(62,180,137); /* Calibrated white for perfect color inversion math */
   border-radius: 50%;
   pointer-events: none;
   z-index: 999999;
@@ -755,9 +751,9 @@ iframe {
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 15px; /* Premium minimalist baseline size */
-  height: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  width: 25px; /* Premium minimalist baseline size */
+  height: 25px;
+  border: 1px solid rgba(62,180,137, 0.8);
   border-radius: 50%;
   pointer-events: none;
   z-index: 999998;
@@ -771,34 +767,39 @@ iframe {
   transition: 
     width 0.28s cubic-bezier(0.25, 1, 0.5, 1),
     height 0.28s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    opacity 0.25s ease;
+    background-color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
 }
 
 /* Cursor Microstates (Inverted Text Tracking Bubble Sizes) */
 .cursor-ring.cursor-hover-text {
   width: 36px;
   height: 36px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.8);
+  border-color: #ffffff;
+  background-color: rgba(62,180,137);
 }
 
 .cursor-ring.cursor-hover-heading {
   width: 40px; /* Balanced perfectly to frame headings beautifully */
   height: 40px;
-  background-color: #ffffff;
-  border-color: #ffffff;
+  background-color: rgba(62,180,137);
+  border-color: rgba(62,180,137);
 }
 
 .cursor.cursor-hover-heading {
   opacity: 0; /* Clear point out of reading axis for titles */
 }
 
+.cursor.cursor-hover-text{
+  opacity: 0;
+}
+
 /* Force override native browser links and custom click interactions */
-a, button, .project-card, .project-thumb, .video-preview, .service-card, .skills span, .contact-card {
+a, button, .project-card, .project-thumb, .video-preview, .service-card, .skills span,.contact-card {
   cursor: none !important;
 }
+
 
 /* ---------- Desktop Layout Adaptations (Tablet Core) ---------- */
 @media (max-width: 930px) {
