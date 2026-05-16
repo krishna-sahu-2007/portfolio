@@ -5,21 +5,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("videoModal");
   const frame = document.getElementById("videoFrame");
 
-  window.openVideo = function (url) {
-    frame.src = url + "?autoplay=1";
-    modal.classList.add("active");
-  };
+window.openVideo = function (url) {
+  if (!modal || !frame) return;
+  frame.src = url + "?autoplay=1";
+  modal.classList.add("active");
+};
 
-  window.closeVideo = function () {
-    frame.src = "";
-    modal.classList.remove("active");
-  };
+window.closeVideo = function () {
+  if (!modal || !frame) return;
+  frame.src = "";
+  modal.classList.remove("active");
+};
 
   if (modal) {
     modal.addEventListener("click", function (event) {
       if (event.target === modal) closeVideo();
     });
   }
+
+  document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && modal.classList.contains("active")) {
+    closeVideo();
+  }
+});
 
   /* ==========================================================================
      2. Refactored Inversion Cursor Engine (Box Layout Fixed)
