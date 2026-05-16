@@ -511,8 +511,10 @@ h1 {
   gap: 42px;
   padding: 44px;
   width: 100% !important;
-  opacity: 0;
-  transform: translateX(-80px);
+
+  opacity: 1;
+  transform: translateX(0);
+
   transition:
     opacity 0.8s ease,
     transform 0.8s ease,
@@ -521,7 +523,12 @@ h1 {
     box-shadow 0.25s ease;
 }
 
-.about-card.show {
+.about-card.animate-about {
+  opacity: 0;
+  transform: translateX(-80px);
+}
+
+.about-card.animate-about.show {
   opacity: 1;
   transform: translateX(0);
 }
@@ -935,7 +942,7 @@ a, button, .project-card, .project-thumb, .video-preview, .service-card, .skills
   }
 }
 
-@media (max-width: 480px) {
+@media (hover: none) and (pointer: coarse) {
   body {
     cursor: auto;
   }

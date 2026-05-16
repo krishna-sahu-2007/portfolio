@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("videoModal");
   const frame = document.getElementById("videoFrame");
   const header = document.querySelector(".site-header");
-  const aboutCard = document.querySelector(".about-card");
   const cursor = document.getElementById("cursor");
   const cursorRing = document.getElementById("cursorRing");
 
@@ -38,17 +37,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (aboutCard) {
-    const aboutObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.2 });
+const aboutCard = document.querySelector(".about-card");
 
-    aboutObserver.observe(aboutCard);
-  }
+if (aboutCard && "IntersectionObserver" in window) {
+  const aboutObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        aboutObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  aboutObserver.observe(aboutCard);
+}
 
   if (!cursor || !cursorRing) return;
 
